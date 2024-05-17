@@ -49,3 +49,15 @@ class UserRegisterForm(UserCreationForm):
         if commit:
             user.save()
         return user
+    
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('name', 'contact_phone_number', 'contact_email', 'experience')
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Write your name'}),
+            'contact_phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '+7(XXX)XXX-XXXX', "pattern": "\+7\d{10}", "title": "Phone number must be in the format '+79993211432'"}),
+            'contact_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Write your email'}),
+            'experience': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Write your experience'}),
+        }

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block main %}
+<div class="card my-5">
+
+    <form class="card-body cardbody-color p-lg-5" method="post">
+      {% csrf_token %}
+      <div class="mb-3">  
+        {{ form.name }}
+      </div>
+      <div class="mb-3">  
+        {{ form.contact_phone_number }}
+      </div>
+      <div class="mb-3">  
+        {{ form.contact_email }}
+      </div>
+      <div class="mb-3">  
+        {{ form.experience }}
+      </div>
+      <div class="edit_content d-flex mt-2 justify-content-center">
+        <button type="submit" class="btn1 btn-dark">Confirm edit</button>
+    </form>
+        <a href="./"><button type="button" class="btn1 btn-dark">Back</button></a>
+    </div>
+</div>
+{% endblock main %}
+
+

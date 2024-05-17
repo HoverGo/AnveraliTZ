@@ -45,3 +45,28 @@ header .container button:not(:first-child) {
 	padding: 8px 30px;
 }
 
+main .container-admin {
+	background-color: red;
+}
+
+main .container-executor {
+	background-color: aqua;
+}
+
+main .container-customer {
+	background-color: greenyellow;
+}
+
+main .container-admin, .container-executor, .container-customer {
+	width: 400px;
+	text-align: center;
+}
+
+main .edit_content {
+	width: 400px;
+}
+
+main .edit_content button {
+	margin: 0 60px;
+}
+

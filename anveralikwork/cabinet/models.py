@@ -61,12 +61,12 @@ class User(AbstractBaseUser, PermissionsMixin):
                 message=("Invalid password"),
                 code="invalid_password",
             ),
-        ],
+        ], editable=False,
     )
 
     name = models.CharField(max_length=25, null=True, blank=True)
     contact_email = models.EmailField(null=True, blank=True)
-    contact_phone_number = models.CharField(max_length=20, validators=[RegexValidator(regex=r'^\+\d{1,3} \(\d{3}\) \d{3}-\d{4}$', message='Invalid phone number')], null=True, blank=True)
+    contact_phone_number = models.CharField(max_length=20, validators=[RegexValidator(regex=r'^\+7\d{10}$', message='Invalid phone number')], null=True, blank=True)
     experience = models.CharField(null=True, blank=True)
 
     is_executor = models.BooleanField(default=False)

@@ -3,41 +3,11 @@
 {% block title %}{{ title }}{% endblock title %}
 
 {% block main %}
-<div class="container mt-4 mb-4 p-3 d-flex justify-content-center"> 
-    <div class="card p-4"> 
-        <div class=" image d-flex flex-column justify-content-center align-items-center"> 
-            <span class="name mt-3">Eleanor Pena</span>
-            <span class="idd">@{{ user.username }}</span> 
-            <div class="d-flex flex-row justify-content-center align-items-center gap-2"> 
-                <span><i class="fa fa-copy"></i></span> 
-            </div>
-            {% if user.is_executor and user.is_customer %}
-            {% elif user.is_executor %}
-            <div class="d-flex flex-row justify-content-center align-items-center mt-3"> 
-                <span>role: executor</span> 
-                {% else %}
-                <span>role: customer</span> 
-                {% endif %}
-            </div>
-            <div class="d-flex flex-row justify-content-center align-items-center mt-3"> 
-                <span>phone: {{ user.contact_phone_number }}</span> 
-            </div>
-            <div class="d-flex flex-row justify-content-center align-items-center mt-3"> 
-                <span>email: {{ user.contact_email }}</span> 
-            </div> 
-            <div class="text mt-3"> 
-                <span>experience: {{ user.experience }}</span> 
-            </div> 
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> 
-                <span><i class="fa fa-twitter"></i></span> 
-                <span><i class="fa fa-facebook-f"></i></span> 
-                <span><i class="fa fa-instagram"></i></span> 
-                <span><i class="fa fa-linkedin"></i></span> 
-            </div> 
-            <div class=" d-flex mt-2">
-                <button class="btn1 btn-dark">Edit Profile</button> 
-            </div> 
-        </div> 
-    </div>
-</div>
+{% if user.is_executor and user.is_customer %}
+{% include "cabinet/cabinet_profile_admin.html" %}
+{% elif user.is_executor %}
+{% include "cabinet/cabinet_profile_executor.html" %}
+{% elif user.is_customer %}
+{% include "cabinet/cabinet_profile_customer.html" %}
+{% endif %}
 {% endblock main %}
