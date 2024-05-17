@@ -1,0 +1,41 @@
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .header .container {
+	width: 1600px;
+	margin: 0 auto;
+}
+
+header .header {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+header .container .register_buttons a {
+	text-decoration: none;
+	color: black;
+}
+
+header .container .register_buttons .white_button {
+	color: white;
+}
+
+header .container .register_buttons .black_button {
+	color: black;
+}
+
+header .container .register_buttons .black_button:hover {
+	color: blue;
+}
+
+header .container button:not(:last-child) {
+	margin-right: 15px;
+}
+
+header .container button:not(:first-child) {
+	padding: 8px 20px;
+}
+
