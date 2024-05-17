@@ -70,3 +70,6 @@ main .edit_content button {
 	margin: 0 60px;
 }
 
+main .image .text {
+	width: 350px;
+}
