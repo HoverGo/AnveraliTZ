@@ -14,20 +14,26 @@ header .header {
     padding-bottom: 10px;
 }
 
-header .container .register_buttons a {
+header .container .account_buttons a {
 	text-decoration: none;
 	color: black;
 }
 
-header .container .register_buttons .white_button {
+header .container .account_buttons .profile_button {
+	color: rgb(0, 238, 255);
+	margin: 8px 10px;
+}
+
+
+header .container .account_buttons .white_button {
 	color: white;
 }
 
-header .container .register_buttons .black_button {
+header .container .account_buttons .black_button {
 	color: black;
 }
 
-header .container .register_buttons .black_button:hover {
+header .container .account_buttons .black_button:hover {
 	color: blue;
 }
 
@@ -36,6 +42,6 @@ header .container button:not(:last-child) {
 }
 
 header .container button:not(:first-child) {
-	padding: 8px 20px;
+	padding: 8px 30px;
 }
 
